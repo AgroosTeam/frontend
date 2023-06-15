@@ -4,7 +4,7 @@ import Constants from 'expo-constants'
 import React, {useState} from 'react'
 import { TimeModalPicker } from "../../components/TimeModalPicker"
 import { useNavigation } from "@react-navigation/native"
-// import DateTimePickerModal from "react-native-modal-datetime-picker"
+import DateTimePickerModal from "react-native-modal-datetime-picker"
 
 const statusBarHeight = Constants.statusBarHeight
 
@@ -13,8 +13,6 @@ const iftttUrl = "https://ostap1729.pythonanywhere.com/sonoff_ifttt"
 const PlaceRentScreen = ({route, navigation}) => {
 
     const screensNavigation = useNavigation()
-
-   
     const [postId, setPostId] = useState([]);
 
     const post = () => {
@@ -24,7 +22,7 @@ const PlaceRentScreen = ({route, navigation}) => {
     //     body: JSON.stringify({ title: 'React POST Request Example' })
     //   })
     //   .catch((error) => console.error(error))
-      screensNavigation.navigate("SuccessfulRented")
+        screensNavigation.navigate("SuccessfulRented")
     }
 
     // const [data, setData] = useState([]);
@@ -75,7 +73,7 @@ const PlaceRentScreen = ({route, navigation}) => {
         setDatePickerVisibility(false);
     }
 
-    const handleConfirmDate = (date) => {
+    const handleConfirm = (date) => {
         setChooseDate(date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate())
         hideDatePicker();
     }
@@ -84,8 +82,8 @@ const PlaceRentScreen = ({route, navigation}) => {
         <View style={[styles.container, {marginTop: statusBarHeight}]}>
             <View style={[styles.topPanel, {flexDirection: "row"}]}>
                 <TouchableOpacity
-                   onPress = {() => navigation.navigate("Home")}
-                   style={styles.backButton}
+                    onPress = {() => navigation.navigate("Home")}
+                    style={styles.backButton}
                 >
                     <Text style={styles.backButtonArrow}>{backButton}</Text>
                 </TouchableOpacity>
@@ -132,7 +130,7 @@ const PlaceRentScreen = ({route, navigation}) => {
                             onPress={() => setIsTimeToModalVisible(true)}
                             style={styles.touchableOpacity}
                         >
-                           <Text style={styles.text}>{chooseTimeTo}</Text>
+                            <Text style={styles.text}>{chooseTimeTo}</Text>
                         </TouchableOpacity>
                     </View>
                 </View>
@@ -161,14 +159,12 @@ const PlaceRentScreen = ({route, navigation}) => {
                     />
                 </Modal>
             </View>
-            {/* <DateTimePickerModal
+            <DateTimePickerModal
                 isVisible={isDatePickerVisible}
                 mode="date"
-                onConfirm={handleConfirmDate}
+                onConfirm={handleConfirm}
                 onCancel={hideDatePicker}
-                is24Hour={true}
-                minimumDate={new Date(date)}
-            /> */}
+            />
 
             <TouchableOpacity 
                 style={styles.rentButton} 
