@@ -10,13 +10,17 @@ import {
     Pressable
 } from 'react-native'
 import styles from "./style";
-import { useNavigation } from "@react-navigation/native";
 import * as ImagePicker from 'expo-image-picker';
-import Constants from 'expo-constants';
+import HistoryItem from '../HistoryItem';
 
 const Account = (props) => {
-    const navigation = useNavigation();
     const [image, setImage] = useState(null);
+    const history = [
+        {owner: "Vitalik", address: "Vyhovskoho 7", price: "12 hrn/hour", rentTimeBegin: "14:00", rentTimeEnd: "16:00", rentDate: "12.05.2022"},
+        {owner: "Oleg", address: "Shevhcenka 40", price: "13 hrn/hour", rentTimeBegin: "12:00", rentTimeEnd: "13:00", rentDate: "2.05.2022"},
+        {owner: "Artur", address: "Dovbusha 5", price: "10 hrn/hour", rentTimeBegin: "20:00", rentTimeEnd: "21:00", rentDate: "29.02.2022"},
+        {owner: "Robert", address: "Pidvalna 2", price: "14 hrn/hour", rentTimeBegin: "20:00", rentTimeEnd: "21:00", rentDate: "29.02.2022"}
+    ]
 
     useEffect( async () => {
         if (Platform.OS !== 'web'){
@@ -55,47 +59,11 @@ const Account = (props) => {
             <Text style={styles.history}>History:</Text>
 
             <ScrollView style={styles.scrollView}>
-                <View style={styles.historyParkingPlace}>
-                    <Text style={styles.parkingPlaceText}>Vitalik</Text>
-                    <TouchableOpacity 
-                        onPress={() => navigation.navigate("PlaceRent", {owner: "Vitalik", address: "Vyhovskoho 7", price: "12 hrn/hour"})}
-                    >
-                        <Text style={styles.buttonsText}>details</Text>
-                    </TouchableOpacity>
-                    <Text style={styles.parkingPlaceHours}>14:00-16:00</Text>
-                    <Text style={styles.parkingPlaceDate}>12.05.2022</Text>
-                </View>
-                <View style={styles.historyParkingPlace}>
-                    <Text style={styles.parkingPlaceText}>Oleg</Text>
-                    <TouchableOpacity 
-                        onPress={() => navigation.navigate("PlaceRent", {owner: "Oleg", address: "Shevhcenka 40", price: "13 hrn/hour"})}
-                    >
-                        <Text style={styles.buttonsText}>details</Text>
-                    </TouchableOpacity>
-                    <Text style={styles.parkingPlaceHours}>12:00-13:00</Text>
-                    <Text style={styles.parkingPlaceDate}>02.05.2022</Text>
-                </View>
-                <View style={styles.historyParkingPlace}>
-                    <Text style={styles.parkingPlaceText}>Artur</Text>
-                    <TouchableOpacity 
-                        onPress={() => navigation.navigate("PlaceRent", {owner: "Artur", address: "Dovbusha 5", price: "10 hrn/hour"})}
-                    >
-                        <Text style={styles.buttonsText}>details</Text>
-                    </TouchableOpacity>
-                    <Text style={styles.parkingPlaceHours}>20:00-21:00</Text>
-                    <Text style={styles.parkingPlaceDate}>29.02.2022</Text>
-                </View>
-                <View style={styles.historyParkingPlace}>
-                    <Text style={styles.parkingPlaceText}>Robert</Text>
-                    <TouchableOpacity 
-                        onPress={() => navigation.navigate("PlaceRent", {owner: "Robert", address: "Pidvalna 2", price: "14 hrn/hour"})}
-                    >
-                        <Text style={styles.buttonsText}>details</Text>
-                    </TouchableOpacity>
-                    <Text style={styles.parkingPlaceHours}>12:00-13:00</Text>
-                    <Text style={styles.parkingPlaceDate}>08.11.2021</Text>
-                </View>
-        
+                {history.length === 0 ? <Text>Your history is empty</Text> : history.map(
+                    historyItem => {
+                        return <HistoryItem historyItem={historyItem}/>
+                    }
+                )}
             </ScrollView>
             
         </View>
