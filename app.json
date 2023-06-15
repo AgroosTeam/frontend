@@ -1,0 +1,42 @@
+{
+  "expo": {
+    "name": "TestApp",
+    "slug": "TestApp",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/transparent-parkinc_logo_bezpalki.png",
+    "splash": {
+      "image": "./assets/parkinc_logo0_1.png",
+      "resizeMode": "cover",
+      "backgroundColor": "#ffffff"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "infoPlist":{
+        "NSLocationWhenInUseUsageDescription": "Please allow this app to use your gps data to see your location on map"
+      },
+      "bundleIdentifier": "com.ParkInc",
+      "config": {
+        "googleMapsApiKey": "AIzaSyB_r0s5hYPxUszkW1HJkI0nqFpEhq92WrU"
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#FFFFFF"
+      }
+      
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "description": "",
+    "githubUrl": "https://github.com/Ustymko/reactTest"
+  }
+}

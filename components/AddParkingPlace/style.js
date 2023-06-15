@@ -1,0 +1,108 @@
+import { StyleSheet } from "react-native";
+
+const styles = StyleSheet.create({
+
+    container: {
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'flex-start',
+    },
+    addPhoto: {
+        alignItems: 'center',
+        justifyContent: 'center',
+        width: 180,
+        height: 250,
+        marginTop: 50,
+        marginLeft: 0,
+        backgroundColor: '#fff',
+        borderColor: 'black',
+        borderWidth: 2,
+    },
+    addPhoto1: {
+        alignItems: 'center',
+        justifyContent: 'center',
+        width: 180,
+        height: 200,
+        marginTop: 20,
+        marginLeft: 10,
+        backgroundColor: '#fff',
+        borderColor: 'black',
+        borderWidth: 2,
+    },
+    placeInfo:{
+        justifyContent: 'flex-start',
+        alignItems: 'center',
+        flexDirection: 'row',
+        width: '100%',      
+    },
+    placeInfo1:{
+        justifyContent: 'flex-start',
+        alignItems: 'center',
+        flexDirection: 'row',
+        width: '100%',      
+    },
+    placeInfoText:{
+        fontSize: 20,
+        color: 'white',
+        marginLeft: 20,
+        marginBottom: 10,
+    },
+    placeInfoText1:{
+        fontSize: 20,
+        color: 'white',
+        marginLeft: 10,
+        marginBottom: 10,
+        marginTop: 50,
+    },
+    textinput: {
+        alignSelf: 'stretch',
+        height: 40,
+        marginBottom: 10,
+        color: '#fff',
+        borderColor: '#f8f8f8',
+        borderWidth: 1,
+        padding: 10,
+        marginLeft: 10,
+    },
+    textinput1: {
+        alignSelf: 'stretch',
+        height: 40,
+        width: 300,
+        color: '#fff',
+        borderColor: '#f8f8f8',
+        borderWidth: 1,
+        padding: 10,
+        marginLeft: 10,
+    },
+    adressview: {
+        alignSelf: 'stretch',
+        alignItems: 'flex-start',
+        justifyContent: 'flex-start',
+        marginTop: 10,
+    },
+    chooseOnMap: {
+        alignItems: 'center',
+        justifyContent: 'center',
+        height: 40,
+        width: 300,
+        backgroundColor: '#abe1ed',
+        marginLeft: 10,
+        borderColor: '#f8f8f8',
+        borderWidth: 1,
+    },
+    chooseOnMapText: {
+        fontSize: 20,
+        color: '#5c5c5c',
+    },
+    addplace: {
+        alignItems: 'center',
+        justifyContent: 'center',
+        width: 180,
+        height: 100,
+        backgroundColor: '#72cf79',
+        marginTop: 120,
+        marginLeft: 20,
+    },
+});
+
+export default styles;
