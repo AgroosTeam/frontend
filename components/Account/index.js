@@ -6,7 +6,8 @@ import {
     TextInput,
     ScrollView,
     TouchableOpacity,
-    Platform
+    Platform,
+    Pressable
 } from 'react-native'
 import styles from "./style";
 import { useNavigation } from "@react-navigation/native";
@@ -43,8 +44,9 @@ const Account = (props) => {
         <View style={styles.container}>
             {!image && <Image style={styles.avatar} source={require('../../assets/avatardefault.png')}/>}
             {image && <Image style={styles.avatar} source={{uri:image}}/>}
-            <Text onPress={PickImage} style={styles.changephoto}>Change photo</Text>
-            
+            <TouchableOpacity onPress={PickImage} style={styles.touchableEditIcon}>
+                <Image style={styles.editIcon} source={require('./images/edit-icon.png')}/>
+            </TouchableOpacity>
 
             <TextInput style ={styles.textinput} placeholder="Name"/>
             <TextInput style ={styles.textinput} placeholder="Phone number"/>

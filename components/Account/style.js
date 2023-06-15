@@ -32,6 +32,19 @@ const styles = StyleSheet.create({
 
     },
 
+    editIcon:{
+      width: 35,
+      height: 35,
+      marginTop: -25,
+      marginLeft: 100,
+      borderRadius: 20,
+      // zIndex: 100
+    },
+
+    touchableEditIcon:{
+      zIndex: 1
+    },
+
     changephoto:{
       
     },
