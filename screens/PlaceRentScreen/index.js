@@ -82,7 +82,7 @@ const PlaceRentScreen = ({route, navigation}) => {
         <View style={[styles.container, {marginTop: statusBarHeight}]}>
             <View style={[styles.topPanel, {flexDirection: "row"}]}>
                 <TouchableOpacity
-                    onPress = {() => navigation.navigate("Home")}
+                    onPress = {() => navigation.navigate("Map")}
                     style={styles.backButton}
                 >
                     <Text style={styles.backButtonArrow}>{backButton}</Text>
