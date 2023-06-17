@@ -11,6 +11,7 @@ import AddNewPlaceScreen from './screens/AddNewPlaceScreen';
 import MyPlacesScreen from './screens/MyPlacesScreen';
 import SuccessfulRentedScreen from './screens/SuccessfulRentedScreen';
 import SettingsScreen from './screens/SettingsScreen';
+import PaymentScreen from './screens/PaymentScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -45,6 +46,10 @@ const App = () => {
         <Stack.Screen
           name = "PlaceRent"
           component={PlaceRentScreen}
+        />
+        <Stack.Screen
+          name="Payment"
+          component={PaymentScreen}
         />
         <Stack.Screen
           name = "SuccessfulRented"

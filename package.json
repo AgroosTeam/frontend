@@ -10,10 +10,11 @@
     "eject": "expo eject"
   },
   "dependencies": {
-    "@react-native-community/datetimepicker": "^6.7.5",
+    "@react-native-community/datetimepicker": "4.0.0",
     "@react-native-community/geolocation": "^2.0.2",
     "@react-navigation/native": "^6.0.10",
     "@react-navigation/native-stack": "^6.6.1",
+    "@stripe/stripe-react-native": "^0.28.0",
     "delay-async": "^1.2.0",
     "expo": "~44.0.0",
     "expo-constants": "~13.0.1",
