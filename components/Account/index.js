@@ -18,13 +18,16 @@ const Account = (props) => {
     const navigation = useNavigation();
     const [image, setImage] = useState(null);
 
-    useEffect( async () => {
-        if (Platform.OS !== 'web'){
-            const { status } = await ImagePicker.requestMediaLibraryPermissionsAsync();
-            if (status !== 'granted'){
-                alert('Permission denied')
+    useEffect(() => {
+        async function fetchData(){
+            if (Platform.OS !== 'web'){
+                const { status } = await ImagePicker.requestMediaLibraryPermissionsAsync();
+                if (status !== 'granted'){
+                    alert('Permission denied')
+                }
             }
         }
+        fetchData();
     },[])
 
     const PickImage = async () => {
