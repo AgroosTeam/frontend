@@ -6,13 +6,11 @@ import {
     TextInput,
     ScrollView,
     TouchableOpacity,
-    Platform,
-    Pressable
+    Platform
 } from 'react-native'
 import styles from "./style";
 import { useNavigation } from "@react-navigation/native";
 import * as ImagePicker from 'expo-image-picker';
-import Constants from 'expo-constants';
 
 const Account = (props) => {
     const navigation = useNavigation();
